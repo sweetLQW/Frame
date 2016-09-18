@@ -1,0 +1,17 @@
+@color:green;//定义颜色，此注释不显示在css中
+.box{
+	width:100px;
+	height:100px;
+	background-color:@color;
+	//.radius(20px);//可以在这传参数
+	.radius;
+}
+h1{
+	/*此注释显示在css*/color:@color;
+}
+//.radius(@val){
+.radius(@val:300px){//也可以在这里传参数
+	-webkit-border-radius:@val;
+	-moz-border-radius:@val;
+	border-radius:@val;
+}

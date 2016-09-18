@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button>计算</button>
+	<script src="script/sea.js"></script>
+	<script>
+		// seajs.use("jquery",function(){//通过sea引入jquery模块
+		// 	$("button").click(function(){
+		// 		alert("nihao");
+		// 	})
+		// })
+		seajs.config({
+			"alias":{
+				"swiper":"swiper-3.3.3.min.js"
+			}
+		})
+		seajs.use(["count","jquery"],function(co){//引入多个文件时用数组，自定义模块要有参数
+			//alert(co.mycount());
+			co.mycount();
+		})
+	</script>
+</body>
+</html>

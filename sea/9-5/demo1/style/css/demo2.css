@@ -1,0 +1,21 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.list {
+  list-style: none;
+}
+.list li {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid black;
+  float: left;
+  text-align: center;
+}
+.list li a {
+  text-decoration: none;
+}
+.list li:hover {
+  background-color: red;
+}

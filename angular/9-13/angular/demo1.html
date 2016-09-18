@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angular</title>
+</head>
+<!-- ng-app写在body里，代表body里面的内容全部交给angular管理 -->
+<body ng-app>
+	<input type="text" ng-model="text">
+	<!-- ng-model="text" 相当于一个指令，指定text为数据模型 -->
+	<h1>{{text}}</h1>
+	<!-- {{}}花括号里面可写js变量 -->
+	<h2 ng-bind="text"></h2>
+	<script src="script/angular.js"></script>
+</body>
+</html>

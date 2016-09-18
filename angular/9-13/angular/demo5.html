@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angular用表格显示数据</title>
+	<link rel="stylesheet" href="style/bootstrap.css">
+</head>
+<body ng-app="app">
+	<table ng-controller="myctrl" class="table">
+		<thead>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>性别</th>
+			<th>成绩</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="da in data">
+				<td  ng-repeat="d in da" ng-bind="d"></td>
+			</tr>
+		</tbody>
+	</table>
+	<script src="script/angular.js"></script>
+	<script>
+		var myApp = angular.module("app",[]);
+		myApp.controller("myctrl",function($scope){
+			$scope.data = [
+				{
+					name:"小明",
+					age:"13",
+					sex:"female",
+					score:88,
+				},
+				{
+					name:"小红",
+					age:"23",
+					sex:"male",
+					score:99,
+				}
+			];
+		})
+	</script>
+</body>
+</html>

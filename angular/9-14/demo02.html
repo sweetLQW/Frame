@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angular计数器指令</title>
+	<style type="text/css">
+		ul{
+			list-style: none;
+		}
+		li{
+			float: left;
+			width: 25px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+		}
+		.sub,.add{
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body ng-app="app">
+	<hh></hh>
+	<hh></hh>
+	<hh></hh>
+	<script src="script/angular.js"></script>
+	<script>
+		var myApp = angular.module("app",[]);
+		myApp.directive("hh",function(){//directive代表指令，controller代表控制器
+			return {
+				replace:"true",//为真时，用定义的模板替换hh标签，默认情况下模板写在hh标签里面
+				restrict:"AE",//A代表当“hh”作为属性时好使，E元素 ，C是class名
+				// template:"<p>我的第一个angular指令</p>",//定义hh标签的内容
+				templateUrl:"template/demo1.html",//属性值为路径
+				scope:{},
+				controller:function($scope){
+				//给指定绑定数据在指令里面写控制器属性，属性值为函数
+					$scope.text = 0;
+					$scope.add = function(){
+						$scope.text++
+					}
+					$scope.sub = function(){
+						if($scope.text > 0){
+							$scope.text--
+						}
+					}
+				}
+			}
+		})
+	</script>
+</body>
+</html>

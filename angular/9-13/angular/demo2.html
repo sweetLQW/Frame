@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angular</title>
+</head>
+<body ng-app="app">
+	<div ng-controller="myctrl">
+		<!-- 给div设置一个控制器 -->
+		<h1>{{text}}</h1>
+	</div>
+	<script src="script/angular.js"></script>
+	<script>
+		var myApp = angular.module("app",[]);//定义一个angular的模块
+		myApp.controller("myctrl",function($scope){//这模块下的名为myctrl控制器，传入一个$scope对象，名必须为$scope
+			$scope.text = "hello";//给控制器下的变量赋值
+		})
+	</script>
+</body>
+</html>

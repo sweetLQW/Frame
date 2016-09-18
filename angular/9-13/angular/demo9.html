@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		ul{
+			list-style: none;
+		}
+		li{
+			float: left;
+			width: 50px;
+			height: 10px;
+		}
+	</style>
+</head>
+<body ng-app="app">
+	<ul ng-controller="myctrl">
+		<li ng-click="add()">+</li>
+		<li ng-bind="text"></li>
+		<li ng-click="sub()">-</li>
+	</ul>
+	<script src="script/angular.js"></script>
+	<script>
+		var myApp = angular.module("app",[]);
+		myApp.controller("myctrl",function($scope){
+			$scope.text = 0;
+			$scope.add = function(){
+				$scope.text += 1;
+			}
+			$scope.sub = function(){
+				if($scope.text > 0){
+					$scope.text -= 1;
+				}	
+			}
+		})
+	</script>
+</body>
+</html>

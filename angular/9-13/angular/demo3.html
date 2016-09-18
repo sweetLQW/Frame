@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angular</title>
+</head>
+<body ng-app="app">
+	<div ng-controller="myctrl">
+		<!-- 给div设置一个控制器,显示数据-->
+	<!-- 	<h1>{{data.name}}</h1>
+		<p>年龄：{{data.age}}</p>
+		<p>性别：{{data.sex}}</p>
+		<p>成绩：{{data.score}}</p> -->
+		<h1 ng-bind=data.name></h1>
+		<p>年龄：<span ng-bind = data.age></span></p>
+		<p>性别：<span ng-bind = data.sex></span></p>
+		<p>成绩：<span ng-bind = data.score></span></p>
+	</div>
+	<script src="script/angular.js"></script>
+	<script>
+		var myApp = angular.module("app",[]);//定义一个angular的模块，[]写依赖关系
+		myApp.controller("myctrl",function($scope){
+			$scope.data = {
+				"name":"哈哈",
+				"age":"20",
+				"sex":"male",
+				"score":"99"
+			}
+		})
+	</script>
+</body>
+</html>

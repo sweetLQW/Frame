@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angular指令</title>
+</head>
+<body ng-app="app">
+	<hh></hh>
+	<script src="script/angular.js"></script>
+	<script>
+		var myApp = angular.module("app",[]);
+		myApp.directive("hh",function(){//directive代表指令，controller代表控制器
+			return {
+				replace:"true",//为真时，用定义的模板替换hh标签，默认情况下模板写在hh标签里面
+				restrict:"AE",//A代表当“hh”作为属性时好使，E元素 ，C是class名
+				// template:"<p>我的第一个angular指令</p>",//定义hh标签的内容
+				templateUrl:"template/demo.html"
+			}
+		})
+	</script>
+</body>
+</html>

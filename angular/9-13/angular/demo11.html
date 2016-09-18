@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style/bootstrap.css">
+</head>
+<body ng-app="app">
+	<div ng-controller="myctrl">
+		<form ng-submit="sub()">
+			<input class="a" type="text" ng-model="stu.name" placeholder="姓名">
+			<input class="a" type="text" ng-model="stu.age" placeholder="年龄">
+			<input class="a" type="text" ng-model="stu.sex" placeholder="性别">
+			<input class="a" type="text" ng-model="stu.score" placeholder="成绩">
+			<input type="submit">
+		</form>
+		<table class="table">
+			<thead>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th>成绩</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="student in students">
+					<td ng-bind="student.name"></td>
+					<td ng-bind="student.age"></td>
+					<td ng-bind="student.sex"></td>
+					<td ng-bind="student.score"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="script/angular.js"></script>
+	<script>
+		var myApp = angular.module("app",[]);
+		myApp.controller("myctrl",function($scope){
+			//用浅度克隆把要添加的对象赋给新对象在添加到表格中，否则要添加的对象和添加到表格中的对象会绑定在一起
+			function clone(obj){
+				var newObj = {};
+				for(var i in obj){
+					newObj[i]=obj[i];
+				}
+				return newObj;
+			};
+			$scope.sub = function(){
+				this.students.push(clone(this.stu));
+				console.log(this.stu);
+			};
+			$scope.students = [
+				{
+					"name":"小明",
+					"age":"21",
+					"sex":"female",
+					"score":"99"
+				},
+			];
+		})
+	</script>
+</body>
+</html>

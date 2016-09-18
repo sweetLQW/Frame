@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Document</title>
+	<style type="text/css">
+		.box1{
+			background-color: green;
+			width: 110px;
+			height: 110px;
+		}
+		.box2{
+			background-color: yellow;
+			width: 110px;
+			height: 110px;
+		}
+	</style>
+	</head>
+<body>
+	<button>点击</button>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<script src="script/zepto.js"></script>
+	<script src="script/zepto-touch.js"></script>
+	<script>
+		$(".box1").tap(function(){
+			$(this).css("background-color","red");
+		})
+		$(".box2").click(function(){
+			$(this).css("background-color","blue");
+		})
+	</script>
+</body>
+</html>

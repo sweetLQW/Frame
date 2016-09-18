@@ -1,0 +1,10 @@
+$(".btn").click(function(){
+	alert("hhhhh");
+})
+$(".btn1").click(function(){
+	alert("hhhhh");
+})
+$(".btn2").click(function(){
+	alert("hhhhh");
+	console.log("hhhhh");
+})

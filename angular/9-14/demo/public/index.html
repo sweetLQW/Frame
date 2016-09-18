@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>连接数据库显示数据</title>
+	<link rel="stylesheet" href="style/bootstrap.css">
+</head>
+<body ng-app="app">
+	<div ng-controller="myctrl">
+		<form ng-submit="sub()">
+			<input type="text" ng-model="stu.name">
+			<input type="text" ng-model="stu.age">
+			<input type="text" ng-model="stu.sex">
+			<input type="text" ng-model="stu.score">
+			<input type="submit">
+		</form>
+		<table class="table">
+			<thead>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th>成绩</th>
+				<th>删除</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="student in students">
+					<td ng-bind="student.name" class="name"></td>
+					<td ng-bind="student.age"></td>
+					<td ng-bind="student.sex"></td>
+					<td ng-bind="student.score"></td>
+					<td><button ng-click="del()">删除</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="script/angular.js"></script>
+	<script>
+		var myApp = angular.module("app",[]);
+		myApp.controller("myctrl",function($scope,$http){
+			$http({
+					method:"get",
+					url:"/finddata",
+				}).success(function(data){
+					$scope.students = data;
+				})
+			$scope.sub = function(){
+				var stu = $scope.stu;
+				console.log(stu);
+				$http({
+					method:"post",
+					url:"/insertdata",
+					params:stu
+				}).success(function(data){
+					$scope.students = data;
+				})
+				
+			}
+			$scope.del = function(){
+				if(confirm("确定要删除数据吗？")){
+					$http({
+						method:"post",
+						url:"/removedata",
+						params:this.student
+					}).success(function(data){
+						$scope.students = data;
+					})
+				}
+			}
+		})
+	</script>
+</body>
+</html>

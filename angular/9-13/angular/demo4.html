@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angular用li列表显示数据</title>
+</head>
+<body ng-app="app">
+	<ul ng-controller="myctrl">
+		<li ng-repeat="da in data" ng-bind="da"></li>
+		<!-- ng-repeat相当于遍历data这个数组，ng-bind把每一个元素显示在li里面 -->
+	</ul>
+	<script src="script/angular.js"></script>
+	<script>
+		var myApp = angular.module("app",[]);
+		myApp.controller("myctrl",function($scope){
+			$scope.data = [0,1,2,3,4,5,6,7];
+		})
+	</script>
+</body>
+</html>

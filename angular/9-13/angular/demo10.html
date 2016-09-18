@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		li{
+			width: 50px;
+			height: 30px;
+		}
+	</style>
+</head>
+<body ng-app="app">
+	<div ng-controller="myctrl">
+		<form ng-submit="sub()">
+			<input type="text" ng-model="text">
+			<input type="submit">
+		</form>
+		<ul>
+			<li ng-repeat="da in data" ng-bind="da"></li>
+		</ul>
+	</div>
+	<script src="script/angular.js"></script>
+	<script>
+		var myApp = angular.module("app",[]);
+		myApp.controller("myctrl",function($scope){
+			$scope.data = [0,1,2];
+			$scope.sub = function(){
+				$scope.data.push($scope.text);
+				console.log($scope.data)
+			}
+		})
+	</script>
+</body>
+</html>

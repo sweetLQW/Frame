@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angular</title>
+</head>
+<body ng-app="app">
+	<div ng-controller="myctrl">
+		<button ng-click="show()">点击</button>
+	</div>
+	<script src="script/angular.js"></script>
+	<script>
+		var myApp = angular.module("app",[]);//定义一个angular的模块
+		myApp.controller("myctrl",function($scope){
+			$scope.show = function(){
+				alert("hello 酷狗")
+			}
+		})
+	</script>
+</body>
+</html>

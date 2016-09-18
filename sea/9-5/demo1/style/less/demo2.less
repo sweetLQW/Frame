@@ -1,0 +1,23 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+@height:30px;
+.list{
+	list-style:none;
+	li{
+		width:100px;
+		height:@height;
+		line-height:@height;
+		border:1px solid black;
+		float:left;
+		text-align:center;	
+		a{
+			text-decoration: none;
+		}
+		&:hover{//&代表选择器本身
+			background-color:red;
+		}
+	}
+
+}
