@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>通过索引找元素</title>
+	<style type="text/css">
+		.box div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			float :left;
+			margin-left: 10px;
+			margin-top: 10px;
+		}
+		form{
+			margin-left: 50px;
+		}
+	</style>
+</head>
+<body>
+	<form id="myForm" action="">
+		<input type="button" value="1">
+		<input type="button" value="2">
+		<input type="button" value="3">
+	</form>
+	<div class="box">
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<script src="script/jquery.js"></script>
+	<script>
+		$("#myForm input").click(function(){
+			var index = $(this).index();
+			$(".box div").eq(index).css("background-color","blue").siblings().css("background-color","white");
+			
+		});
+	</script>
+</body>
+</html>

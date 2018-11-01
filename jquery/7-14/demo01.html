@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计数</title>
+</head>
+<body>
+	<input type="button" value="+" class="add">
+	<span class="num">0</span>
+	<input type="button" value="-" class="minus">
+	<script src="script/jquery.js"></script>
+	<script>
+		$(".minus").click(function(){
+			var num1 =Number($(".num").text()) 
+			if(num1>0){
+			$(".num").text(--num1);
+			}
+		})
+		$(".add").click(function(){
+			var num = Number($(".num").text())
+			$(".num").text(++num);
+		})
+	</script>
+</body>
+</html>

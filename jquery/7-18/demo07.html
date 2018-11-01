@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>homework2-删除</title>
+</head>
+<body>
+	<ul>
+		<li>葡萄&nbsp;&nbsp;<span>删除</span></li>
+		<li>香蕉&nbsp;&nbsp;<span>删除</span></li>
+		<li>苹果&nbsp;&nbsp;<span>删除</span></li>
+		<li>奇异果&nbsp;<span>删除</span></li>
+		<li>水蜜桃&nbsp;<span>删除</span></li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+		$("span").click(function(){
+			var del = confirm("确定要删除吗？")
+			if(del != null && del != ""){
+				$(this).parent().remove();
+			}
+		})
+	</script>
+</body>
+</html>

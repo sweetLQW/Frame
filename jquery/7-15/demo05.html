@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>随机数</title>
+</head>
+<body>
+	<input type="text" class="txt">
+	<input type="button" value="输入随机数" class="btn">
+	<script src="script/jquery.js"></script>
+	<script>
+		var result = Math.floor(Math.random()*10 + 1);
+		$(".btn").click(function(){
+		var txt = Number($(".txt").val());
+		if(txt > result){
+			alert("哎呦，错了呢，输入的数大于随机数！")
+		}
+		if(txt < result){
+			alert("哎呦，错了呢，输入的数小于随机数！")
+		}
+		if(txt == result){
+			alert("恭喜你答对了！")
+			result = Math.floor(Math.random()*10 + 1);
+		}	
+		})
+	</script>
+</body>
+</html>

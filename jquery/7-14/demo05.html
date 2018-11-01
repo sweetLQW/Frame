@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>if else语句</title>
+</head>
+<body>
+	<input type="text" class="txt1"> 
+	<input type="text" class="sign"> 
+	<input type="text" class="txt2"> =
+	<input type="text" class="txt">
+	<input type="button" value="提交" class="btn">
+	<script src="script/jquery.js"></script>
+	<script>	
+		$(".btn").click(function(){
+			var str1 = $(".txt1").val();
+			var str2 = $(".txt2").val();
+			var sign = $(".sign").val();
+			//如果输入的是+，则执行if语句，否则执行else语句。
+			// if(sign == "+"){
+			// 	var str = Number(str1) + Number(str2);
+			// }else{
+			// 	var str = Number(str1) - Number(str2);
+			// }
+			// if语句
+			// if(sign == "+"){
+			//  	var str = Number(str1) + Number(str2);
+		 // 	}if(sign == "-"){
+			//  	var str = Number(str1) - Number(str2);
+		 // 	}
+		 	// if(sign == "*"){
+			 // 	var str = Number(str1) * Number(str2);
+		 	// }
+		 	// if(sign == "/"){
+			 // 	var str = Number(str1) / Number(str2);
+		 // 	}
+		 	switch(sign){
+		 		case "+": var str = Number(str1) + Number(str2);
+		 		case "-": var str = Number(str1) - Number(str2);
+		 		case "*": var str = Number(str1) * Number(str2);
+		 		case "/": var str = Number(str1) / Number(str2);
+		 	}
+			$(".txt").val(str);
+		})
+	</script>
+</body>
+</html>

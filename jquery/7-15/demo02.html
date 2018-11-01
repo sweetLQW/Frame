@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象</title>
+</head>
+<body>
+	<script>
+		var cat = {
+			name:"mimi",
+			age:5,
+			sayName:function(){
+				alert(this.name)
+			},
+			sayHello:function(){
+				var information="大家好，我是" + this.name + "我今年" + this.age + "岁了。" 
+				alert(information);
+			},
+			eat:function(food){
+				var eat = "我喜欢吃" + food;
+				alert(eat);
+			},
+			count:function(num1,num2,sign){
+				switch(sign){
+					case "+": var result = Number(num1) + Number(num2);break;
+					case "-": var result = Number(num1) - Number(num2);break;
+					case "*": var result = Number(num1) * Number(num2);break;
+					case "/": var result = Number(num1) / Number(num2);break;
+				}
+				var count = num1 + sign + num2 + "的计算结果是：" + result;
+				alert(count);
+			}
+		}
+		// cat.name = "wenwen";//更改name属性的属性值
+		// cat.sayHello();
+		// cat.eat("鱼");
+		cat.count(3,5,"*");
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>4-年月日</title>
+	<style type="text/css">
+		.red{
+			color:red;
+		}
+		.green{
+			color :green;
+		}
+	</style>
+</head>
+<body>
+	<span>请输入日期：</span>
+	<input type="text" class="date">
+	<p class="info"></p>
+	<script src="script/jquery.js"></script>
+	<script>
+		var re = /^([0-9]{4})\-([0-9]{2})\-([0-9]{2})$/;
+		$(".date").blur(function(){
+			var date = $(this).val();
+			var result = re.exec(date);	//exec的值是一个数组，test的值是bool类型
+			var span = checkinput(result);
+			$(".info").html(span)
+		})
+		function checkinput(result){
+			if(result == null){
+				var content = "<span class='red'>请输入正确的格式</span>"
+				return content;
+			}else{
+				var content = "<span class='green'>您输入的日期为"+
+								result[1]+
+								"年"+
+								result[2]+
+								"月"+
+								result[3]+
+								"日。</span>"
+				return content;
+			}
+		}		
+	</script>
+</body>
+</html>

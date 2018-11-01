@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>检验手机号</title>
+	<style type="text/css">
+		.red{
+			color:red;
+		}
+		.green{
+			color :green;
+		}
+	</style>
+</head>
+<body>
+	<span>请输入手机号：</span>
+	<input type="text" class="txt">
+	<span>@163.com</span><br>
+	<span class="panduan"></span>
+	<script src="script/jquery.js"></script>
+	<script>
+		var re = /^[0-9]{11}$/;
+		$(".txt").blur(function(){
+			var txt = $(this).val();
+			var result = re.test(txt);	
+			console.log(result)
+			if(result){
+				$(".panduan").text("成功").removeClass("red").addClass("green")
+			}else{
+				$(".panduan").text("失败").removeClass("green").addClass("red")
+			}
+		})
+			
+	</script>
+
+</body>
+</html>

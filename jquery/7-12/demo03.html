@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义动画</title>
+	<style type="text/css">
+		.nav li{
+			float:left;
+			list-style: none;
+			height: 30px;
+			width: 100px;
+			border: 1px solid red;
+			line-height: 30px;
+			text-align: center;
+			overflow:hidden;
+		}
+		.nav a{
+			display: block;
+			height: 30px;
+			width: 100px;
+			background-color: yellow;
+		}
+		.nav span{
+			display: block;
+			height: 30px;
+			width: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<ul class="nav">
+		<li>
+			<div>
+			<a href="">公司简介</a>
+			<span>公司简介</span>
+			</div>
+		</li>
+		<li>
+			<div>
+			<a href="">公司简介</a>
+			<span>公司简介</span>
+			</div>
+		</li>
+		<li>
+			<div>
+			<a  href="">公司简介</a>
+			<span>公司简介</span>
+			</div>
+		</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+		$(".nav>li").mouseenter(function(){
+			$(this).find("div").animate({"margin-top":"-30px"},500);
+		}).mouseleave(function(){
+			$(this).find("div").animate({"margin-top":"0px"},500);
+		});
+	</script>
+</body>
+</html>

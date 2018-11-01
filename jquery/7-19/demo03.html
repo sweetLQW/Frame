@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>显示当前时间</title>
+</head>
+<body>
+	<span class="hours"></span>:
+	<span class="minutes"></span>:
+	<span class="seconds"></span>
+	<script src="script/jquery.js"></script>
+	<script>
+		function time(){
+			var today = new Date();
+			var hours = today.getHours()
+			var minutes = today.getMinutes()
+			var seconds = today.getSeconds()
+			$(".hours").text(hours);
+			$(".minutes").text(minutes);
+			$(".seconds").text(seconds);
+		}
+		setInterval(time,0)
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>homework3-图片轮播</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.img{
+			width: 300px;
+			height: 300px;
+			overflow: hidden;
+		}
+		.img1{
+			width: 3000px;
+			height: 300px;
+		}
+		img{
+			width: 300px;
+			height: 300px;
+			float:left;
+		}
+		li{
+			float:left;
+			list-style: none;
+			width: 30px;
+			text-align: center;
+			border: 1px solid black;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="img">
+		<div class="img1">
+			<img src="images/0.jpg" alt="">
+			<img src="images/1.jpg" alt="">
+			<img src="images/2.jpg" alt="">
+			<img src="images/3.jpg" alt="">
+			<img src="images/4.jpg" alt="">
+		</div>
+	</div>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+		$("ul li").click(function(){
+			var index = $(this).index();
+			var a = index * -300;
+			$(".img1").animate({"margin-left":a},5000)
+		});
+	</script>
+</body>
+</html>

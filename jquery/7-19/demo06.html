@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2-计时器方法</title>
+</head>
+<body>
+	<span>爆炸</span>
+	<input type="button" value="解除警报" class="stop">
+	<script src="script/jquery.js"></script>
+	<script>
+		function fun(){
+			$("span").text("砰砰！！！");
+		}
+		var t = setTimeout(fun,3000);
+		$(".stop").click(function(){
+			clearTimeout(t);
+		})
+	</script>
+</body>
+</html>

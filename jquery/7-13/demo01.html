@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加节点</title>
+</head>
+<body>
+	<form action="">
+		<input type="text" id="txt">
+		<input type="button" id="btn" value="添加">
+	</form>
+	<ul id="list">
+		<li>葡萄<span>删除</span></li>
+		<li id="banana">香蕉<span>删除</span></li>
+		<li>椰子<span>删除</span></li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+		$("#btn").click(function(){
+			var value = $("#txt").val();
+			var li = "<li>" + value + "</li>"
+			//$("#list").append(li);//在子级后面添加
+			//$("#list").prepend(li);//在子级前面添加
+			//$("#banana").after(li);//同级之后添加
+			$("#banana").before(li);//在同级之前添加
+		});
+		$("span").click(function(){
+			$(this).parent().remove();
+		})
+	</script>
+</body>
+</html>

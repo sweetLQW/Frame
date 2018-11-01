@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>时分秒</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding :0;
+		}
+
+	</style>
+</head>
+<body>
+	<h3>现在的时间是：</h3>
+	<span class="year"></span> 年
+	<span class="month"></span> 月
+	<span class="date"></span> 日<br>
+	<span class="hours"></span> ：
+	<span class="minutes"></span> ：
+	<span class="seconds"></span>
+	<script src="script/jquery.js"></script>
+	<script>
+	var today = new Date();
+	var year = today.getFullYear();
+	var date = today.getDate();
+	var month = today.getMonth();
+	var hours = today.getHours();
+	var minutes = today.getMinutes();
+	var seconds = today.getSeconds();
+	$(".year").text(year);
+	$(".month").text(month);
+	$(".date").text(date);
+	$(".hours").text(hours);
+	$(".minutes").text(minutes);
+	$(".seconds").text(seconds);
+	</script>
+</body>
+</html>

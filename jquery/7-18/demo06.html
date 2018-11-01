@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>homework1-添加</title>
+</head>
+<body>
+	<form action="">
+		<input type="button" value="添加" id="btn">
+	</form>
+	<ul>
+		<li>葡萄</li>
+		<li>香蕉</li>
+		<li>苹果</li>
+		<li>奇异果</li>
+		<li>水蜜桃</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+		$("#btn").click(function(){
+			var value =prompt("请输入要添加水果的名字")
+			// if(value != null && value != ""){
+				if(value){//当需要布尔类型时，其他数据自动转换成布尔类型，由于null和""转换成布尔时都为false，所以直接判断value得布尔值即可
+				// li = "<li>" + value + "</li>"
+				var li = $("<li></li>");//创建一个li标签
+				li.text(value);
+				$("ul").append(li);
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+	<style type="text/css">
+		.btn1{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<span class="days"></span>日
+	<span class="hours"></span>：<span class="minutes"></span>：<span class="seconds"></span>
+	<input type="button" value="开始抢购" class="btn">
+	<script src="script/jquery.js"></script>
+	<script>
+	function fun(){
+		var strTime = "2016-8-24 11:00:00";
+		var timeTarget = new Date(strTime);
+		var target = timeTarget.getTime();
+		var timeNow = new Date();
+		var time = timeNow.getTime();
+		var result = target - time;
+		var day = Math.floor(result/86400000);
+		var yushuHours=result%86400000;
+		var hours = Math.floor(yushuHours/3600000);
+		var yushuMinutes = yushuHours%3600000;
+		var minutes = Math.floor(yushuMinutes/60000);
+		var yushuSeconds = yushuMinutes%60000;
+		var seconds = Math.floor(yushuSeconds/1000);
+		$(".days").text(day)
+		$(".hours").text(hours)
+		$(".minutes").text(minutes)
+		$(".seconds").text(seconds)
+		if(day==0 && hours==0 && minutes==0 && seconds==0){
+			clearInterval(t);
+			$(".btn").addClass("btn1")
+		}
+	}
+	fun();
+	var t = setInterval(fun,1000);
+	</script>
+</body>
+</html>

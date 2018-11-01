@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计时器方法</title>
+</head>
+<body>
+	<input type="button" value="停止" class="stop">
+	<input type="button" value="开始" class="start">
+	<script src="script/jquery.js"></script>
+	<script>
+		var x = 0;
+		function fun(){
+			console.log(x);
+			x++;
+		}
+		var t = setInterval(fun,1000);//每隔2秒钟执行一次fun函数
+		$(".stop").click(function(){
+			clearInterval(t);//停止t这个参数的运行
+		})
+		$(".start").click(function(){
+			t = setInterval(fun,1000);//如果没有“t=”第二次停止就不可用 
+		})
+	</script>
+</body>
+</html>

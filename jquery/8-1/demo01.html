@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点击事件</title>
+</head>
+<body>
+	<input type="button" value="按钮1" class="btn">
+	<input type="button" value="按钮2" class="btn">
+	<input type="button" value="按钮3" class="btn">
+	<script src="demo8.js"></script>
+	<script>
+		$(".btn").click(function(){//$(".btn")是一个对象,
+			alert("hello")
+		})
+		console.log($(".btn").attr("value"))
+	</script>
+</body>
+</html>

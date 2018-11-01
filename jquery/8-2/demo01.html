@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		img{
+			width: 300px;
+			height: 300px;
+		}
+		#numlist{
+			position: absolute;
+			top:270px;
+			left:160px;
+			z-index: 10;
+		}
+		#numlist li{
+			list-style: none;
+			float:left;
+			width: 20px;
+			height: 20px;
+			border:1px solid black;
+			text-align: center;
+			line-height: 20px;
+		}
+		.active{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="bigbox">
+		<ul id="piclist">
+			<li><img src="images/0.jpg" alt=""></li>
+			<li><img src="images/1.jpg" alt=""></li>
+			<li><img src="images/2.jpg" alt=""></li>
+			<li><img src="images/3.jpg" alt=""></li>
+			<li><img src="images/4.jpg" alt=""></li>
+		</ul>
+		<ul id="numlist">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+	<input type="button" class="prev" value="上一张">
+	<input type="button" class="next" value="下一张">
+	<script src="script/jquery.js"></script>
+	<script src="script/jquery.cycle.all.js"></script>
+	<script>
+		$("#piclist").cycle();
+		$("#numlist li").click(function(){
+			var index = $(this).index();
+			$("#piclist").cycle(index);
+			$(this).addClass(".active");
+		})
+
+	</script>
+</body>
+</html>

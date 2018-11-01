@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>页面跳转</title>
+</head>
+<body>
+	<span>5</span>秒后跳转到百度
+	<script src="script/jquery.js"></script>
+	<script>
+		var i=4
+		function fun(){
+			$("span").text(i);
+			i--;
+			if(i==-1){
+			location.href = "https://www.baidu.com/"
+			}
+		}
+		setInterval(fun,1000)
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0-正则表达式</title>
+</head>
+<body>
+	<script src="script/jquery.js"></script>
+	<script>
+		// var re = /1/; //定义一个正则表达式
+		// var str = "1"; 
+		// var result = re.test(str); //通过re(正则表达式)检测str并赋给result，test显示匹配的结果
+		// console.log(result);//查看结果，匹配显示true,否则显示false
+		//var re = /[0-9]/; //匹配0-9任意一位数字
+		//var re = /[0-9]+/;//匹配0-9中的一位或多位数字
+		var re = /[0-9a-zA-Z]{2}/; //匹配0-9中固定几位数字，{指定位数}
+		var str ="q11112222"
+		var result = re.exec(str);
+		console.log(result)
+		//var re = /^[0-9]$/;//^ $开始和结束要求必须符合只有0-9中的一位，不加开始结束只有其中有0-9中的数字即可，不要求位数
+		//var re = /[0-9]{11}/; //匹配0-9中4-11位数，{指定位数}
+		//var str = "123a456b789c";
+		//var re = /[a-z]/g;//g代表全局，把所有的a-z找出来
+		//var newStr = str.replace(re,"-")//把所有a-z替换成-
+		//var newStr = str.split(re)//按a-z划分数组
+		//var result = re.exec(str);//exec显示匹配的内容
+		//console.log(newStr);
+	</script>
+</body>
+</html>

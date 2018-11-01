@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片切换改进</title>
+	<style type="text/css">
+		#img{
+			width: 500px;
+			height: 500px;
+			display:block;
+		}
+		ul li{
+			float:left;
+			list-style: none;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			line-height: 20px;
+			cursor:pointer;
+		}
+		#u .active{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<img id="img" src="images/0.jpg" alt="">
+	<ul id="u">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+		$("#u li").click(function(){
+			var photo = $(this).index();
+			var src = "images/" + photo + ".jpg";
+			$("#img").attr("src",src);
+			//$(this).css("background-color","red").siblings().css("background-color","white");(相同功能，建议使用另一种)
+			$(this).addClass("active").siblings().removeClass("active")
+		});	
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		ul li{
+			float:left;
+			list-style: none;
+			width: 98px;
+			height: 50px;	
+			text-align: center;
+			cursor: pointer;
+			color:red;
+			border:1px solid black;
+			line-height: 50px;
+		}
+
+		.bottom div{
+			width: 298px;
+			height: 450px;
+			border: 1px solid black;
+			font-size: 40px;
+			display: none;
+		}
+		.bottom .active{
+			display:block;
+		}
+	</style>
+</head>
+<body>
+			<ul id="u">
+				<li>标题一</li>
+				<li>标题二</li>
+				<li>标题三</li>
+			</ul>
+		<div class="bottom">
+			<div class="active">
+			<p>内容一</p>
+			</div>
+			<div>
+			<p>内容二</p>
+			</div>
+			<div>
+			<p>内容三</p>
+			</div>
+		</div>
+	<script src="script/jquery.js"></script>
+	<script>
+		$("#u li").click(function(){
+			var nav = $(this).index();
+			//$(".bottom div").eq(nav).css("display","block").siblings().css("display","none");
+			$(".bottom div").eq(nav).addClass("active").siblings().removeClass("active")
+		})
+	</script>
+</body>
+</html>

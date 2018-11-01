@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js字符串链接</title>
+</head>
+<body>
+	<input type="text" class="txt1"> + 
+	<input type="text" class="txt2"> =
+	<input type="text" class="txt">
+	<input type="button" value="提交" class="btn">
+	<script src="script/jquery.js"></script>
+	<script>	
+		$(".btn").click(function(){
+			var str1 = $(".txt1").val();
+			var str2 = $(".txt2").val();
+			var str = Number(str1) + Number(str2);
+			$(".txt").val(str);
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变元素属性</title>
+	<style type="text/css">
+		#img{
+			width: 500px;
+			height: 500px;
+			display:block;
+		}
+		ul li{
+			float:left;
+			list-style: none;
+			width: 50px;
+			cursor:pointer;
+		}
+	</style>
+</head>
+<body>
+	<img id="img" src="images/1.jpg" alt="">
+	<ul>
+		<li id="a">1</li>
+		<li id="b">2</li>
+		<li id="c">3</li>
+		<li id="d">4</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+		$("#a").click(function(){
+			$("#img").attr("src","images/1.jpg");
+		});
+		$("#b").click(function(){
+			$("#img").attr("src","images/2.jpg");
+		});
+		$("#c").click(function(){
+			$("#img").attr("src","images/3.jpg");
+		});
+		$("#d").click(function(){
+			$("#img").attr("src","images/4.jpg");
+		});
+	</script>
+</body>
+</html>
